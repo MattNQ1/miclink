@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found | MicLink</title>
+<meta name="description" content="This page does not exist. Head back to the MicLink home page.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#07090d">
+<meta name="color-scheme" content="dark">
+<script>
+/* GitHub Pages shows this file for any missing address, at any depth. The links below are
+   relative, so point them at the site's own folder when this was not opened as 404.html itself. */
+(function () {
+  if (/\/404(\.html)?$/.test(location.pathname)) return;
+  var first = location.pathname.split("/")[1];
+  var root = /\.github\.io$/i.test(location.hostname) && first ? "/" + first + "/" : "/";
+  var base = document.createElement("base");
+  base.href = root;
+  document.head.appendChild(base);
+})();
+</script>
+<link rel="icon" href="favicon.ico" sizes="48x48">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html { color-scheme: dark; -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; min-height: 100vh; display: flex; flex-direction: column;
+    background: #07090d; color: #eef2f7;
+    font: 400 1rem/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: #5cb9ff; }
+  :focus-visible { outline: 3px solid #5cb9ff; outline-offset: 3px; border-radius: 6px; }
+  header { border-bottom: 1px solid rgba(255, 255, 255, 0.09); }
+  .bar { max-width: 1168px; margin: 0 auto; padding: 0 24px; min-height: 68px; display: flex; align-items: center; }
+  .brand { display: inline-flex; align-items: center; gap: 12px; color: #eef2f7; font-size: 1.3rem; font-weight: 800; letter-spacing: -0.02em; text-decoration: none; }
+  .brand svg { width: 36px; height: 36px; }
+  main {
+    flex: 1; display: grid; place-items: center; padding: 64px 24px; text-align: center;
+    background: radial-gradient(60% 50% at 50% 0%, rgba(30, 155, 255, 0.16), rgba(30, 155, 255, 0) 100%);
+  }
+  .code { margin: 0; color: #1e9bff; font-size: clamp(4rem, 16vw, 8rem); font-weight: 800; line-height: 1; letter-spacing: -0.04em; }
+  h1 { margin: 12px 0 0; font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 800; letter-spacing: -0.02em; }
+  p.lead { max-width: 46ch; margin: 14px auto 0; color: #aab4c3; }
+  .actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: 28px; }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 12px 24px;
+    border: 2px solid transparent; border-radius: 12px; font-size: 1.05rem; font-weight: 700; text-decoration: none;
+  }
+  .btn-primary { background: #1e9bff; color: #03101d; }
+  .btn-primary:hover { background: #5cb9ff; }
+  .btn-ghost { border-color: rgba(255, 255, 255, 0.17); color: #eef2f7; }
+  .btn-ghost:hover { border-color: #1e9bff; }
+  footer { padding: 28px 24px 36px; border-top: 1px solid rgba(255, 255, 255, 0.09); color: #8792a3; font-size: 0.9rem; text-align: center; }
+</style>
+</head>
+<body>
+<header>
+  <div class="bar">
+    <a class="brand" href="index.html" aria-label="MicLink home">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" aria-hidden="true" focusable="false">
+        <defs><linearGradient id="tile" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#12AEFD"/><stop offset="1" stop-color="#0171FD"/></linearGradient></defs>
+        <rect width="1024" height="1024" rx="229" fill="url(#tile)"/>
+        <rect x="372" y="158" width="280" height="456" rx="140" fill="#fff"/>
+        <g transform="rotate(-45 512 388)" fill="none" stroke="#0A84FF" stroke-width="36" stroke-linecap="round"><rect x="370" y="340" width="170" height="96" rx="48"/><rect x="484" y="340" width="170" height="96" rx="48"/></g>
+        <path d="M306 452v10c0 114 92 206 206 206s206-92 206-206v-10" fill="none" stroke="#fff" stroke-width="62" stroke-linecap="round"/>
+        <rect x="478" y="668" width="68" height="150" fill="#fff"/>
+        <rect x="366" y="797" width="294" height="68" rx="34" fill="#fff"/>
+      </svg>
+      <span>MicLink</span>
+    </a>
+  </div>
+</header>
+<main>
+  <div>
+    <p class="code" aria-hidden="true">404</p>
+    <h1>This page is not here</h1>
+    <p class="lead">The link may be old or mistyped. The home page has the downloads, and the setup guide has the steps.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="index.html">Go to the home page</a>
+      <a class="btn btn-ghost" href="setup.html">Open the setup guide</a>
+    </div>
+  </div>
+</main>
+<footer>&copy; 2026 Matthew Malek</footer>
+</body>
+</html>

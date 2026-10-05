@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <!-- MicLink app icon as a vector: blue gradient tile with the white mark. -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#12AEFD"/>
+      <stop offset="1" stop-color="#0171FD"/>
+    </linearGradient>
+  </defs>
+  <rect width="1024" height="1024" rx="229" fill="url(#bg)"/>
+  <rect x="372" y="158" width="280" height="456" rx="140" fill="#fff"/>
+  <g transform="rotate(-45 512 388)" fill="none" stroke="#0A84FF" stroke-width="36" stroke-linecap="round">
+    <rect x="370" y="340" width="170" height="96" rx="48"/>
+    <rect x="484" y="340" width="170" height="96" rx="48"/>
+  </g>
+  <path d="M306 452v10c0 114 92 206 206 206s206-92 206-206v-10" fill="none" stroke="#fff" stroke-width="62" stroke-linecap="round"/>
+  <rect x="478" y="668" width="68" height="150" fill="#fff"/>
+  <rect x="366" y="797" width="294" height="68" rx="34" fill="#fff"/>
+</svg>

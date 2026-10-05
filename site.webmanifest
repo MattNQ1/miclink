@@ -1,0 +1,15 @@
+{
+  "name": "MicLink",
+  "short_name": "MicLink",
+  "description": "Use your iPhone as a microphone for your Windows PC over a USB cable or Wi-Fi.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "browser",
+  "background_color": "#07090d",
+  "theme_color": "#07090d",
+  "icons": [
+    { "src": "assets/img/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/img/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "assets/img/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

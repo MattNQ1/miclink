@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MicLink: use your iPhone as a PC microphone</title>
+<meta name="description" content="MicLink turns your iPhone into a microphone for your Windows PC over a USB cable or Wi-Fi. Pause frees the phone's mic while the PC stays connected.">
+<meta name="theme-color" content="#07090d">
+<meta name="color-scheme" content="dark">
+<meta name="format-detection" content="telephone=no">
+<link rel="canonical" href="https://mattnq1.github.io/miclink/">
+<link rel="icon" href="favicon.ico" sizes="48x48">
+<link rel="icon" href="assets/img/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="assets/img/logo-icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MicLink">
+<meta property="og:title" content="MicLink: your iPhone is now your PC microphone">
+<meta property="og:description" content="MicLink turns your iPhone into a microphone for your Windows PC over a USB cable or Wi-Fi. Pause frees the phone's mic while the PC stays connected.">
+<meta property="og:url" content="https://mattnq1.github.io/miclink/">
+<meta property="og:image" content="https://mattnq1.github.io/miclink/assets/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="MicLink: your iPhone is now your PC microphone. Two iPhone screens show the app streaming and paused.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MicLink: your iPhone is now your PC microphone">
+<meta name="twitter:description" content="MicLink turns your iPhone into a microphone for your Windows PC over a USB cable or Wi-Fi. Pause frees the phone's mic while the PC stays connected.">
+<meta name="twitter:image" content="https://mattnq1.github.io/miclink/assets/img/og-image.png">
+<link rel="stylesheet" href="assets/site.css">
+<script>document.documentElement.className = "js";</script>
+<script src="assets/config.js" defer></script>
+<script src="assets/qr.js" defer></script>
+<script src="assets/site.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "MicLink",
+  "description": "Use your iPhone as a microphone for a Windows PC over a USB cable or Wi-Fi.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Windows 10, Windows 11, iOS 17",
+  "url": "https://mattnq1.github.io/miclink/",
+  "image": "https://mattnq1.github.io/miclink/assets/img/icon-512.png",
+  "author": { "@type": "Person", "name": "Matthew Malek" }
+}
+</script>
+</head>
+<body>
+<svg class="sprite" width="0" height="0" aria-hidden="true" focusable="false">
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v11"/><path d="m7 11 5 5 5-5"/><path d="M5 20h14"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 24 24"><rect x="6.2" y="5" width="3.8" height="14" rx="1.2"/><rect x="14" y="5" width="3.8" height="14" rx="1.2"/></symbol>
+  <symbol id="i-wifi" viewBox="0 0 24 24"><path d="M3.5 9.6a12.4 12.4 0 0 1 17 0"/><path d="M7 13.1a7.4 7.4 0 0 1 10 0"/><circle cx="12" cy="17.2" r="1.2"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5.5" y="10.5" width="13" height="9.5" rx="2.2"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3.5 5 6.2v5.3c0 4.3 2.9 7.6 7 9 4.1-1.4 7-4.7 7-9V6.2z"/><path d="m9.2 12 2 2 3.6-3.8"/></symbol>
+  <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3.5" width="6" height="10.5" rx="3"/><path d="M6 11.5a6 6 0 0 0 12 0"/><path d="M12 17.5V21"/><path d="M9 21h6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2.6"/><path d="M11 18.3h2"/></symbol>
+  <symbol id="i-store" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.6"/><path d="M12 7v6.2"/><path d="m9.4 10.8 2.6 2.6 2.6-2.6"/><path d="M10.4 17.6h3.2"/></symbol>
+  <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 7h10"/><path d="M18 7h2"/><circle cx="16" cy="7" r="2"/><path d="M4 17h2"/><path d="M10 17h10"/><circle cx="8" cy="17" r="2"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12"/><path d="M18 6 6 18"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5.5"/><path d="M12 7.6v.2"/></symbol>
+</svg>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header" id="top">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="#top">
+      <img src="assets/img/logo-icon.svg" alt="" width="36" height="36">
+      <span>MicLink</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+      <svg class="icon icon--menu" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-menu"/></svg>
+      <svg class="icon icon--close" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-close"/></svg>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <ul>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#setup">Setup</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#download">Download</a></li>
+          <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="main">
+
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap">
+      <div class="hero__inner">
+        <h1 id="hero-title">
+          <span class="line">Your iPhone is now</span>
+          <span class="line">your PC <span class="accent">microphone</span></span>
+        </h1>
+        <p class="hero__sub">USB cable or <span class="nb">Wi-Fi</span>, with a Pause button that frees your phone's mic.</p>
+        <div class="hero__actions">
+          <div class="hero__download">
+            <a class="btn btn--primary" href="https://github.com/MattNQ1/miclink/releases/latest/download/MicLinkSetup.exe" data-win-download><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-download"/></svg><span>Download for Windows</span></a>
+            <span class="hero__meta">Free for Windows 10 and 11 (64-bit)<span data-version-sep hidden> · </span><span data-version hidden></span></span>
+          </div>
+          <div class="app-box" data-appstore-box>
+            <span class="app-box__media"><img src="assets/img/icon-192.png" alt="" width="64" height="64"></span>
+            <span class="app-box__body">
+              <strong class="app-box__title">MicLink for iPhone</strong>
+              <span class="app-box__note">Coming soon to the App Store</span>
+              <span class="app-box__meta">iOS 17 or later<span data-price=" · "> · Free with ads, or Pro from $2.99/month</span></span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="highlights" aria-labelledby="highlights-title">
+    <div class="wrap">
+      <h2 class="visually-hidden" id="highlights-title">Highlights</h2>
+      <div class="highlights__scroller" data-scroller role="group" aria-labelledby="highlights-title">
+      <ul class="highlights__list">
+        <li class="card">
+          <span class="card__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-pause"/></svg></span>
+          <h3>Pause frees the mic</h3>
+          <p>Watch a video, take a call or record in another app. Your PC stays connected the whole time.</p>
+        </li>
+        <li class="card">
+          <span class="card__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-wifi"/></svg></span>
+          <h3>USB cable or <span class="nb">Wi-Fi</span></h3>
+          <p>Plug your iPhone in, or connect over your local network. Same app, same microphone.</p>
+        </li>
+        <li class="card">
+          <span class="card__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-lock"/></svg></span>
+          <h3>Lock screen controls</h3>
+          <p>Mute, Pause, Resume and Disconnect from the lock screen and the Dynamic Island.</p>
+        </li>
+        <li class="card">
+          <span class="card__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-shield"/></svg></span>
+          <h3>No account, no recording</h3>
+          <p>Your audio goes only from your phone to your own PC. It is never recorded, uploaded or used for ads. The free plan shows ads from Google; Pro has none.</p>
+        </li>
+      </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="features" aria-labelledby="features-title">
+    <div class="wrap">
+      <div class="section__head">
+        <p class="eyebrow">On your PC</p>
+        <h2 class="section__title" id="features-title">How <span class="accent">MicLink</span> works</h2>
+      </div>
+      <div class="explain">
+        <div class="explain__text">
+          <p>MicLink sends your iPhone's microphone to your Windows PC over a <strong>USB cable or <span class="nb">Wi-Fi</span></strong>. Windows sees it as a normal microphone, so you can pick it in Discord, Zoom, OBS and other Windows apps.</p>
+          <p>The Windows installer sets up the virtual microphone MicLink needs: <span class="nb">VB-CABLE</span>, a product of <span class="nb">VB-Audio</span> Software, downloaded from <span class="nb">VB-Audio</span> during setup. In your apps, choose <strong>CABLE Output (<span class="nb">VB-Audio</span> Virtual Cable)</strong>.</p>
+          <p>Audio is 48 kHz, 16-bit mono and goes straight from the phone to your PC, over the cable or your local network. It is not sent anywhere else.</p>
+        </div>
+        <figure class="sound-panel">
+          <div class="sound-panel__bar">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-sliders"/></svg>
+            <span>Sound <span class="sound-panel__crumb">&rsaquo; Input</span></span>
+          </div>
+          <div class="sound-panel__list">
+            <div class="device device--idle">
+              <span class="device__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-mic"/></svg></span>
+              <span>
+                <span class="device__name">Microphone</span>
+                <span class="device__sub">Built in</span>
+              </span>
+            </div>
+            <div class="device device--active">
+              <span class="device__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-mic"/></svg></span>
+              <span>
+                <span class="device__name">CABLE Output <span class="device__check"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-check"/></svg></span><span class="visually-hidden"> (selected)</span></span>
+                <span class="device__sub"><span class="nb">VB-Audio</span> Virtual Cable</span>
+                <span class="meter" aria-hidden="true"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span></span><span></span><span></span><span></span></span>
+              </span>
+            </div>
+          </div>
+          <figcaption class="sound-panel__note">Illustration of the Windows sound input list. Your iPhone arrives as CABLE Output.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="pause" aria-labelledby="pause-title">
+    <div class="wrap">
+      <div class="section__head">
+        <p class="eyebrow">The Pause button</p>
+        <h2 class="section__title" id="pause-title"><span class="accent">Pause</span> without disconnecting</h2>
+        <p class="section__lead">Need your phone for a minute? Pause hands the microphone back to your iPhone. Your PC stays connected and hears silence until you tap Resume, with nothing to do on the PC.</p>
+      </div>
+
+      <div class="phones-scroller">
+        <div class="phones" data-scroller role="group" aria-label="MicLink on iPhone">
+          <figure class="phone-shot">
+            <div class="phone"><img src="assets/img/screen-streaming.webp" width="603" height="1310" loading="lazy" decoding="async" alt="MicLink on iPhone while streaming to a Windows PC: Mute, Disconnect and Pause buttons, a gain slider and a status card that reads Connected."></div>
+            <figcaption><strong>Live</strong>Your iPhone is the PC's microphone.</figcaption>
+          </figure>
+          <figure class="phone-shot">
+            <div class="phone"><img src="assets/img/screen-paused.webp" width="603" height="1310" loading="lazy" decoding="async" alt="MicLink while paused: the microphone is off, the Pause button has become Resume and the status card says the PC is still connected."></div>
+            <figcaption><strong>Paused</strong>The mic is free. The PC is still connected.</figcaption>
+          </figure>
+          <figure class="phone-shot">
+            <div class="phone"><img src="assets/img/screen-lockscreen.webp" width="603" height="1310" loading="lazy" decoding="async" alt="iPhone lock screen showing the MicLink banner with Mute, Pause and Disconnect buttons."></div>
+            <figcaption><strong>Locked</strong>Controls on the lock screen.</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="table-scroll" data-scroller role="group" aria-label="What each button does">
+        <table class="compare">
+          <caption class="visually-hidden">What Pause, Mute and Disconnect do</caption>
+          <thead>
+            <tr>
+              <td></td>
+              <th scope="col" class="is-key">Pause</th>
+              <th scope="col">Mute</th>
+              <th scope="col">Disconnect</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">iPhone microphone</th>
+              <td class="is-key"><strong>Released</strong></td>
+              <td>Stays on</td>
+              <td>Released</td>
+            </tr>
+            <tr>
+              <th scope="row">Free for other apps</th>
+              <td class="is-key"><strong>Yes</strong></td>
+              <td>No</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <th scope="row">PC connection</th>
+              <td class="is-key"><strong>Stays connected</strong></td>
+              <td>Stays connected</td>
+              <td>Closed</td>
+            </tr>
+            <tr>
+              <th scope="row">The PC hears</th>
+              <td class="is-key">Silence</td>
+              <td>Silence</td>
+              <td>Nothing</td>
+            </tr>
+            <tr>
+              <th scope="row">To come back</th>
+              <td class="is-key">Tap Resume</td>
+              <td>Tap Unmute</td>
+              <td>Tap Start</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="ticks-block">
+        <h3>Also built in</h3>
+        <ul class="ticks">
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>Mute, for a cough or a quick word off the record</span></li>
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>Gain control from 0 to 200&nbsp;%</span></li>
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>Keeps streaming with your iPhone locked</span></li>
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>Mute, Pause, Resume and Disconnect on the lock screen and in the Dynamic Island</span></li>
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>Follows your iPhone's light or dark mode</span></li>
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>No account or sign-in, and your audio is never recorded</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="setup" aria-labelledby="setup-title">
+    <div class="wrap">
+      <div class="section__head">
+        <p class="eyebrow">Quick setup</p>
+        <h2 class="section__title" id="setup-title">Up and running in <span class="accent">three steps</span></h2>
+      </div>
+      <ol class="steps">
+        <li class="step">
+          <div class="step__top">
+            <span class="step__num" aria-hidden="true">1</span>
+            <span class="step__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-download"/></svg></span>
+          </div>
+          <h3><span class="visually-hidden">Step 1: </span>Install MicLink on your PC</h3>
+          <p>Run the installer. It sets up the virtual microphone MicLink needs and can add Apple's USB support for cable mode.</p>
+        </li>
+        <li class="step">
+          <div class="step__top">
+            <span class="step__num" aria-hidden="true">2</span>
+            <span class="step__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-phone"/></svg></span>
+          </div>
+          <h3><span class="visually-hidden">Step 2: </span>Start on your iPhone</h3>
+          <p>Open MicLink, choose USB or <span class="nb">Wi-Fi</span> and tap Start. On the free plan, watch a short ad first to get your hour. Then press Connect in MicLink on your PC.</p>
+        </li>
+        <li class="step">
+          <div class="step__top">
+            <span class="step__num" aria-hidden="true">3</span>
+            <span class="step__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-mic"/></svg></span>
+          </div>
+          <h3><span class="visually-hidden">Step 3: </span>Pick the microphone</h3>
+          <p>In Discord, Zoom, OBS or Windows itself, choose CABLE Output (<span class="nb">VB-Audio</span> Virtual Cable).</p>
+        </li>
+      </ol>
+      <p class="steps-more"><a class="text-link" href="setup.html">Step-by-step setup guide <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></p>
+    </div>
+  </section>
+
+  <section class="section" id="pricing" aria-labelledby="pricing-title">
+    <div class="wrap">
+      <div class="section__head">
+        <p class="eyebrow">Pricing</p>
+        <h2 class="section__title" id="pricing-title">Free with ads, or <span class="accent">MicLink Pro</span></h2>
+        <p class="section__lead">Every plan has every feature: USB and <span class="nb">Wi-Fi</span>, Pause, Mute, gain and the lock screen controls. The plans differ only in how you get microphone time on your iPhone. MicLink for Windows is free.</p>
+      </div>
+
+      <ul class="plans">
+        <li class="plan">
+          <h3 class="plan__name">Free</h3>
+          <p class="plan__price"><span class="plan__amount">$0</span></p>
+          <p class="plan__note">Watch a short video ad and get 1 hour of microphone time.</p>
+          <ul class="plan__list">
+            <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>1 hour of microphone time for each ad</span></li>
+            <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>Repeat as often as you like, and save up to 4 hours</span></li>
+            <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>Time only counts while you are streaming to your PC, muted or not</span></li>
+          </ul>
+        </li>
+        <li class="plan plan--featured">
+          <p class="plan__badge">Recommended</p>
+          <h3 class="plan__name">MicLink Pro Yearly</h3>
+          <p class="plan__price"><span class="plan__amount">$14.99</span> <span class="plan__per">per year</span></p>
+          <p class="plan__note"><strong class="plan__save">Save 58&nbsp;%</strong> compared with twelve monthly payments. That is about $1.25 a month.</p>
+          <ul class="plan__list">
+            <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>Unlimited microphone time</span></li>
+            <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>No ads</span></li>
+            <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>Renews every year until you cancel</span></li>
+          </ul>
+        </li>
+        <li class="plan">
+          <h3 class="plan__name">MicLink Pro Monthly</h3>
+          <p class="plan__price"><span class="plan__amount">$2.99</span> <span class="plan__per">per month</span></p>
+          <p class="plan__note">The same MicLink Pro, paid month by month.</p>
+          <ul class="plan__list">
+            <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>Unlimited microphone time</span></li>
+            <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>No ads</span></li>
+            <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>Renews every month until you cancel</span></li>
+          </ul>
+        </li>
+      </ul>
+
+      <div class="plans-terms">
+        <h3>Before you subscribe</h3>
+        <ul>
+          <li>These are US prices in US dollars. Prices may differ in other countries; the app shows your price before you buy.</li>
+          <li>MicLink Pro is bought inside the iPhone app, through Apple, and is charged to your Apple Account.</li>
+          <li>A subscription renews automatically until you cancel it. You can cancel at any time in your Apple Account settings, at least 24 hours before the renewal date.</li>
+          <li>How the saving is worked out: twelve monthly payments of $2.99 are $35.88. The yearly plan is $14.99, which is 58&nbsp;% less.</li>
+          <li>The free plan shows ads from Google, and your iPhone needs an internet connection to load one.</li>
+          <li>MicLink for Windows is free, with no ads and no subscription.</li>
+        </ul>
+        <p class="plans-terms__more">More in the <a href="terms.html#subscriptions">subscription terms</a>, the <a href="privacy.html#ads">privacy policy</a> and the <a href="#faq-price">questions below</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section" id="download" aria-labelledby="download-title">
+    <div class="wrap">
+      <div class="cta">
+        <h2 id="download-title">Ready to use your iPhone as your PC mic?</h2>
+        <p class="cta__lead">Install MicLink on your PC, get the app on your iPhone, then connect with a cable or over <span class="nb">Wi-Fi</span>.</p>
+        <div class="cta__actions">
+          <a class="btn btn--primary" href="https://github.com/MattNQ1/miclink/releases/latest/download/MicLinkSetup.exe" data-win-download><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-download"/></svg><span>Download for Windows</span></a>
+          <span class="store-btn" data-appstore-button><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-store"/></svg><span class="store-btn__text"><span class="store-btn__small">Coming soon to the</span> <span class="store-btn__big">App Store</span></span></span>
+        </div>
+        <div class="cta__details">
+          <div class="cta__detail">
+            <div>
+              <h3>MicLink for Windows</h3>
+              <p>Windows 10 or 11, 64-bit.<span data-version-sep hidden> </span><span data-version hidden></span><span data-version-sep hidden>.</span> The installer is not code-signed yet, so Windows may show a SmartScreen prompt: choose <strong>More info</strong>, then <strong>Run anyway</strong>. <a href="setup.html#install-windows">Setup guide</a></p>
+            </div>
+          </div>
+          <div class="cta__detail">
+            <div class="cta__qr" data-appstore-qr hidden></div>
+            <div>
+              <h3>MicLink for iPhone</h3>
+              <p>iPhone with iOS 17 or later. <span data-appstore-soon>Coming soon to the App Store.</span><span class="cta__scan" data-appstore-live hidden>Scan the code with your iPhone camera to open the App Store.</span><span data-price=" Price: " data-price-end="."> Price: Free with ads, or Pro from $2.99/month.</span> <a href="#pricing">See pricing</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="faq" aria-labelledby="faq-title">
+    <div class="wrap">
+      <div class="section__head">
+        <p class="eyebrow">Good to know</p>
+        <h2 class="section__title" id="faq-title">Questions and <span class="accent">answers</span></h2>
+      </div>
+      <div class="faq">
+        <details id="faq-need">
+          <summary><span>What do I need?</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-chevron"/></svg></summary>
+          <div class="faq__answer">
+            <p>A PC with Windows 10 or Windows 11 (64-bit) and an iPhone with iOS 17 or later. To connect them you need a USB cable, or both devices on the same <span class="nb">Wi-Fi</span> network.</p>
+          </div>
+        </details>
+        <details id="faq-pause">
+          <summary><span>What is the difference between Pause and Mute?</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-chevron"/></svg></summary>
+          <div class="faq__answer">
+            <p><strong>Pause</strong> frees your iPhone's microphone, so you can watch a video, take a call or record in another app. Your PC stays connected and hears silence. Tap Resume and you are back, with nothing to do on the PC.</p>
+            <p><strong>Mute</strong> keeps the microphone on and simply sends silence to the PC. It is the quick one, for a cough or a word off the record.</p>
+          </div>
+        </details>
+        <details id="faq-usb-wifi">
+          <summary><span>Does it work over both USB and <span class="nb">Wi-Fi</span>?</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-chevron"/></svg></summary>
+          <div class="faq__answer">
+            <p>Yes. You choose USB or <span class="nb">Wi-Fi</span> in the iPhone app and in MicLink on your PC. Over <span class="nb">Wi-Fi</span>, both devices need to be on the same local network.</p>
+          </div>
+        </details>
+        <details id="faq-pick-mic">
+          <summary><span>Which microphone do I choose in Discord, Zoom or OBS?</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-chevron"/></svg></summary>
+          <div class="faq__answer">
+            <p>Choose <strong>CABLE Output (<span class="nb">VB-Audio</span> Virtual Cable)</strong>. That is where your iPhone's audio arrives on Windows. The <a href="setup.html#pick-mic">setup guide</a> shows where the setting is in each app.</p>
+          </div>
+        </details>
+        <details id="faq-vbcable">
+          <summary><span>What is <span class="nb">VB-CABLE</span>, and why does the installer add it?</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-chevron"/></svg></summary>
+          <div class="faq__answer">
+            <p><span class="nb">VB-CABLE</span> is a virtual audio device made by <span class="nb">VB-Audio</span> Software. MicLink plays your iPhone's audio into it, and Windows apps see the other end, CABLE Output, as a microphone. The MicLink installer downloads <span class="nb">VB-CABLE</span> from <span class="nb">VB-Audio</span> during setup, so you do not have to install it yourself.</p>
+          </div>
+        </details>
+        <details id="faq-smartscreen">
+          <summary><span>Windows shows a "Windows protected your PC" message. What now?</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-chevron"/></svg></summary>
+          <div class="faq__answer">
+            <p>The Windows download is not code-signed yet, so Microsoft Defender SmartScreen may show that prompt the first time you open the installer. Choose <strong>More info</strong>, then <strong>Run anyway</strong>.</p>
+            <p>Only do this for the installer you downloaded from this website.</p>
+          </div>
+        </details>
+        <details id="faq-usb-support">
+          <summary><span>Do I need to install anything from Apple for the USB cable?</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-chevron"/></svg></summary>
+          <div class="faq__answer">
+            <p>Cable mode uses Apple's USB support for iPhone on Windows. The MicLink installer can add it for you during setup. <span class="nb">Wi-Fi</span> mode does not need it.</p>
+          </div>
+        </details>
+        <details id="faq-lock">
+          <summary><span>Does it keep working when my iPhone is locked?</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-chevron"/></svg></summary>
+          <div class="faq__answer">
+            <p>Yes. MicLink keeps streaming with the phone locked, and the lock screen and Dynamic Island show Mute, Pause or Resume, and Disconnect buttons while a session is running. Resume on the lock screen needs iOS 18 or later; on iOS 17, open MicLink and tap Resume there.</p>
+          </div>
+        </details>
+        <details id="faq-gain">
+          <summary><span>Can I make my voice louder or quieter?</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-chevron"/></svg></summary>
+          <div class="faq__answer">
+            <p>Yes. The gain slider in the iPhone app goes from 0 to 200&nbsp;%.</p>
+          </div>
+        </details>
+        <details id="faq-format">
+          <summary><span>What audio format does MicLink use?</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-chevron"/></svg></summary>
+          <div class="faq__answer">
+            <p>48 kHz, 16-bit, mono. The audio is sent straight from your iPhone to your PC over the cable or your local network.</p>
+          </div>
+        </details>
+        <details id="faq-privacy">
+          <summary><span>Does MicLink collect or upload my audio or any data?</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-chevron"/></svg></summary>
+          <div class="faq__answer">
+            <p><strong>Your audio: no.</strong> It goes only from your iPhone to your own PC and is never recorded, uploaded or used for ads. There is no account and no MicLink server.</p>
+            <p><strong>Ads in the free plan:</strong> the free plan of the iPhone app shows ads from Google. To show and measure them, Google's ad software collects some device and usage information, such as your IP address (to estimate your general location), a device identifier and which ads you saw. MicLink does not ask for permission to track you across other companies' apps. MicLink Pro has no ads.</p>
+            <p>MicLink for Windows collects nothing. The details are in the <a href="privacy.html">privacy policy</a>.</p>
+          </div>
+        </details>
+        <details id="faq-platforms">
+          <summary><span>Is there a version for Mac or Android?</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-chevron"/></svg></summary>
+          <div class="faq__answer">
+            <p>No. MicLink is an iPhone app with a companion app for Windows 10 and 11.</p>
+          </div>
+        </details>
+        <details id="faq-price">
+          <summary><span>What does it cost?</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-chevron"/></svg></summary>
+          <div class="faq__answer">
+            <p>MicLink for Windows is free. MicLink for iPhone is free to download, and every feature is in the free plan: you watch a short video ad to get 1 hour of microphone time, as often as you like.</p>
+            <p><strong>MicLink Pro</strong> removes the ads and the time limit. It costs $14.99 per year or $2.99 per month. Those are US prices; they may differ in other countries, and the app shows your price before you buy. The plans are side by side under <a href="#pricing">pricing</a>.</p>
+          </div>
+        </details>
+        <details id="faq-free-hour">
+          <summary><span>What happens when my free hour runs out?</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-chevron"/></svg></summary>
+          <div class="faq__answer">
+            <p>MicLink tells you a few minutes before. Then the microphone pauses and your PC stays connected, just as if you had tapped Pause. Watch another ad for another hour, or go Pro, and carry on. There is nothing to do on the PC.</p>
+            <p>Free time only counts while you are streaming to your PC. Muted time counts too, because Mute keeps the microphone on and the stream running; use Pause to stop the clock. You can watch ads ahead of time and save up to 4 hours.</p>
+          </div>
+        </details>
+        <details id="faq-ads">
+          <summary><span>When does the free plan show ads?</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-chevron"/></svg></summary>
+          <div class="faq__answer">
+            <p>Only when you choose to watch one to get microphone time. The ads are videos from Google, and the iPhone needs an internet connection to load one. Your audio still goes only to your own PC.</p>
+          </div>
+        </details>
+        <details id="faq-cancel">
+          <summary><span>How do I cancel MicLink Pro?</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-chevron"/></svg></summary>
+          <div class="faq__answer">
+            <p>On your iPhone, open <strong>Settings</strong>, tap your name, then <strong>Subscriptions</strong>, choose MicLink and tap <strong>Cancel Subscription</strong>. In MicLink, the three dots at the top right and then <strong>Manage subscription</strong> take you to the same page. You keep Pro until the end of the period you have paid for. After that the app goes back to the free plan.</p>
+            <p>Deleting the app does not cancel a subscription. Apple handles the billing, so refund requests go to Apple at <a href="https://reportaproblem.apple.com" rel="noopener">reportaproblem.apple.com</a>.</p>
+          </div>
+        </details>
+        <details id="faq-restore">
+          <summary><span>I subscribed, but the app shows the free plan. How do I restore MicLink Pro?</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-chevron"/></svg></summary>
+          <div class="faq__answer">
+            <p>Check that the iPhone is signed in to the Apple Account you subscribed with. Then tap the three dots at the top right of MicLink and choose <strong>Restore Purchases</strong>. This also brings Pro to a new or reset iPhone.</p>
+          </div>
+        </details>
+      </div>
+      <p class="faq-more">Something else? See the <a href="setup.html#troubleshooting">troubleshooting steps</a> or the <a href="support.html">support page</a>.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <a class="site-footer__brand" href="index.html">
+      <img src="assets/img/logo-icon.svg" alt="" width="28" height="28">
+      <span>MicLink</span>
+    </a>
+    <p>&copy; 2026 Matthew Malek. All rights reserved.</p>
+    <ul class="site-footer__links">
+      <li><a href="setup.html">Setup guide</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="terms.html">Terms of Use</a></li>
+    </ul>
+    <p class="site-footer__legal">MicLink is an independent app. It is not affiliated with, endorsed by or sponsored by Apple, Microsoft or <span class="nb">VB-Audio</span> Software. iPhone, Dynamic Island and App Store are trademarks of Apple Inc. Windows is a trademark of the Microsoft group of companies. <span class="nb">VB-CABLE</span> is a product of <span class="nb">VB-Audio</span> Software. Other product names are trademarks of their owners and are used only to describe compatibility.</p>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mattnq1.github.io/miclink/sitemap.xml
